@@ -1,25 +1,24 @@
-const express = require('express')
+"use strict"
+
 const mysql = require('mysql')
 
 // Create db connection
 const db = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '12345678',
-  database : 'heroes_db'
-})
+    host     : 'localhost',
+    user     : 'root',
+    password : '12345678',
+    database : 'heroes_db'
+  })
+  
+  // Connect
+  db.connect((err) => {
+      if(err){
+          throw err ;
+      }
+      console.log('MySql Connected...')
+  })
 
-// Connect
-db.connect((err) => {
-    if(err){
-        throw err ;
-    }
-    console.log('MySql Connected...')
-})
-
-const app = express()
-
-// Create DB
+  // Create DB
 app.get('/createdb', (req, res) => {
     let sql = 'CREATE DATABASE heroes_db'
     db.query(sql, (err, result) => {
@@ -76,6 +75,4 @@ app.get('/loadherodata', (req, res) => {
     })
 })
 
-app.listen('3000', () => {
-    console.log('Server started on port 3000')
-})
+module.exports = db;
