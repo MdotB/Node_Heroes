@@ -18,6 +18,9 @@ const db = mysql.createConnection({
       console.log('MySql Connected...')
   })
 
+
+// ====== USED TO CREATE DB AND LOAD DATA =====
+
 //   // Create DB
 // app.get('/createdb', (req, res) => {
 //     let sql = 'CREATE DATABASE heroes_db'
