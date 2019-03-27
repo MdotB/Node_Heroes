@@ -3,12 +3,25 @@
 const mysql = require('mysql')
 
 // Create db connection
-const db = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '12345678',
-    database : 'heroes_db'
-  })
+const db = () => {
+    if(process.env.NODE_ENV == "production") {
+      return mysql.createConnection({
+        host: process.env.DATABASE_URL,
+        user     : 'root',
+        password : '12345678',
+        database : 'heroes_db'
+      })
+    } else {
+        return mysql.createConnection({
+            host     : 'localhost',
+            user     : 'root',
+            password : '12345678',
+            database : 'heroes_db'
+        })
+    }
+    
+
+}
   
   // Connect
   db.connect((err) => {
