@@ -1,14 +1,14 @@
 
-"use strict"
+// "use strict"
 
-const redis = require('redis')
+// const redis = require('redis')
 
-// Create and connect redis client to local instance
-const client = redis.createClient()
+// // Create and connect redis client to local instance
+// const client = redis.createClient()
 
-// Log redis errors to console
-client.on('error', (err) => {
-    console.log("Error: " + err)
-})
+// // Log redis errors to console
+// client.on('error', (err) => {
+//     console.log("Error: " + err)
+// })
 
-module.exports = client
+// module.exports = client
