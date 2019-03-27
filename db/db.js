@@ -5,16 +5,16 @@ const mysql = require('mysql')
 
 // Create db connection
 const db = mysql.createConnection({
-            host     : process.env.DATABASE_URL,
-            user     : 'root',
-            password : '12345678',
-            // database : 'heroes_db'
+            host     : 'us-cdbr-iron-east-03.cleardb.net',
+            user     : 'bf240ca251d83d',
+            password : '53aed5be',
+            database : 'heroku_dd943f98267a7ef'
         })
   
   // Connect
   db.connect((err) => {
       if(err){
-          throw err ;
+          throw err;
       }
       console.log('MySql Connected...')
   })
