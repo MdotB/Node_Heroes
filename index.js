@@ -15,7 +15,7 @@ app.use(() => {
     // Production environment
     if (process.env.NODE_ENV == "production") {
         return mongooseMorgan({
-            connectionString: process.env.MLAB_URL
+            connectionString: 'mongodb://MBell:W1gk300f1@ds125616.mlab.com:25616/hero-http-log-store'
         },{},'dev')
     // Dev environment
     } else {
