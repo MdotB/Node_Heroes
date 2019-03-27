@@ -8,7 +8,7 @@ const db = mysql.createConnection({
             host     : process.env.DATABASE_URL,
             user     : 'root',
             password : '12345678',
-            database : 'heroes_db'
+            // database : 'heroes_db'
         })
   
   // Connect
